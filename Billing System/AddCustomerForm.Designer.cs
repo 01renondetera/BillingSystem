@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            lblTitle = new Label();
             lblFullName = new Label();
             txtFullName = new TextBox();
             lblAddress = new Label();
@@ -44,17 +44,17 @@
             btnBack = new Button();
             SuspendLayout();
             // 
-            // label1
+            // lblTitle
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(100, 21);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(223, 24);
-            label1.TabIndex = 0;
-            label1.Text = "ADD NEW CUSTOMER";
-            label1.Click += label1_Click;
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitle.Location = new Point(100, 21);
+            lblTitle.Margin = new Padding(2, 0, 2, 0);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(223, 24);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "ADD NEW CUSTOMER";
+            lblTitle.Click += label1_Click;
             // 
             // lblFullName
             // 
@@ -71,7 +71,7 @@
             // 
             txtFullName.BorderStyle = BorderStyle.FixedSingle;
             txtFullName.Location = new Point(148, 60);
-            txtFullName.Margin = new Padding(2, 2, 2, 2);
+            txtFullName.Margin = new Padding(2);
             txtFullName.Name = "txtFullName";
             txtFullName.Size = new Size(211, 27);
             txtFullName.TabIndex = 2;
@@ -92,7 +92,7 @@
             // 
             txtAddress.BorderStyle = BorderStyle.FixedSingle;
             txtAddress.Location = new Point(148, 101);
-            txtAddress.Margin = new Padding(2, 2, 2, 2);
+            txtAddress.Margin = new Padding(2);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(211, 27);
             txtAddress.TabIndex = 4;
@@ -112,7 +112,7 @@
             // 
             txtContact.BorderStyle = BorderStyle.FixedSingle;
             txtContact.Location = new Point(148, 139);
-            txtContact.Margin = new Padding(2, 2, 2, 2);
+            txtContact.Margin = new Padding(2);
             txtContact.Name = "txtContact";
             txtContact.Size = new Size(211, 27);
             txtContact.TabIndex = 7;
@@ -132,7 +132,7 @@
             // 
             txtEmail.BorderStyle = BorderStyle.FixedSingle;
             txtEmail.Location = new Point(148, 181);
-            txtEmail.Margin = new Padding(2, 2, 2, 2);
+            txtEmail.Margin = new Padding(2);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(211, 27);
             txtEmail.TabIndex = 10;
@@ -152,7 +152,7 @@
             // 
             txtBalance.BorderStyle = BorderStyle.FixedSingle;
             txtBalance.Location = new Point(148, 220);
-            txtBalance.Margin = new Padding(2, 2, 2, 2);
+            txtBalance.Margin = new Padding(2);
             txtBalance.Name = "txtBalance";
             txtBalance.Size = new Size(67, 27);
             txtBalance.TabIndex = 12;
@@ -164,12 +164,13 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSave.Location = new Point(35, 277);
-            btnSave.Margin = new Padding(2, 2, 2, 2);
+            btnSave.Margin = new Padding(2);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(90, 43);
             btnSave.TabIndex = 13;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // btnClear
             // 
@@ -177,7 +178,7 @@
             btnClear.FlatStyle = FlatStyle.Flat;
             btnClear.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnClear.Location = new Point(148, 277);
-            btnClear.Margin = new Padding(2, 2, 2, 2);
+            btnClear.Margin = new Padding(2);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(90, 43);
             btnClear.TabIndex = 14;
@@ -190,7 +191,7 @@
             btnBack.FlatStyle = FlatStyle.Flat;
             btnBack.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnBack.Location = new Point(269, 277);
-            btnBack.Margin = new Padding(2, 2, 2, 2);
+            btnBack.Margin = new Padding(2);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(90, 43);
             btnBack.TabIndex = 15;
@@ -215,14 +216,13 @@
             Controls.Add(lblAddress);
             Controls.Add(txtFullName);
             Controls.Add(lblFullName);
-            Controls.Add(label1);
+            Controls.Add(lblTitle);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             MaximizeBox = false;
             Name = "AddCustomerForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Billing System - Add Customer";
-            WindowState = FormWindowState.Maximized;
             Load += AddCustomerForm_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -230,7 +230,7 @@
 
         #endregion
 
-        private Label label1;
+        private Label lblTitle;
         private Label lblFullName;
         private TextBox txtFullName;
         private Label lblAddress;
