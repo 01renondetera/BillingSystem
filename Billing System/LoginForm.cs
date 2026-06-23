@@ -1,5 +1,6 @@
 using MySql.Data.MySqlClient;
 using BillingSystem.Database;
+using BillingSystem.Utils;
 
 namespace Billing_System
 {
@@ -66,7 +67,17 @@ namespace Billing_System
                         {
                             if (reader.Read())
                             {
-                                // Credentials matched — open the Customer List form
+                                // Populate AppSession with the logged-in user's details
+                                AppSession.CurrentUserID = reader.GetInt32("UserID");
+                                AppSession.CurrentUsername = txtUsername.Text.Trim();
+                                AppSession.CurrentFullName = reader.GetString("FullName");
+                                AppSession.CurrentRole = reader.GetString("Role");
+
+                                // Write a LOGIN audit log entry
+                                AuditLogger.Log("LOGIN",
+                                    $"{AppSession.CurrentFullName} ({AppSession.CurrentRole}) logged in.");
+
+                                // Open the Customer List Form
                                 CustomerListForm listForm = new CustomerListForm();
                                 listForm.Show();
                                 this.Hide();
@@ -99,6 +110,7 @@ namespace Billing_System
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
+            this.AcceptButton = btnLogin;
             // Test the database connection when the form opens.
             // This gives a clear warning if MySQL is not running.
             if (!DatabaseConnection.TestConnection())
@@ -117,6 +129,14 @@ namespace Billing_System
             txtUsername.Focus();
         }
 
+        private void txtUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) ;
+        }
 
+        private void chkShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPassword.UseSystemPasswordChar = !chkShowPassword.Checked;
+        }
     }
 }

@@ -47,11 +47,11 @@
             // lblTitle
             // 
             lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitle.Location = new Point(100, 21);
+            lblTitle.Font = new Font("Arial Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitle.Location = new Point(78, 18);
             lblTitle.Margin = new Padding(2, 0, 2, 0);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(223, 24);
+            lblTitle.Size = new Size(251, 28);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "ADD NEW CUSTOMER";
             lblTitle.Click += label1_Click;
@@ -160,9 +160,9 @@
             // 
             // btnSave
             // 
-            btnSave.BackColor = Color.Yellow;
+            btnSave.BackColor = Color.FromArgb(255, 255, 192);
             btnSave.FlatStyle = FlatStyle.Flat;
-            btnSave.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSave.Font = new Font("Arial Narrow", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSave.Location = new Point(35, 277);
             btnSave.Margin = new Padding(2);
             btnSave.Name = "btnSave";
@@ -174,9 +174,9 @@
             // 
             // btnClear
             // 
-            btnClear.BackColor = Color.Red;
+            btnClear.BackColor = Color.FromArgb(255, 192, 192);
             btnClear.FlatStyle = FlatStyle.Flat;
-            btnClear.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnClear.Font = new Font("Arial Narrow", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnClear.Location = new Point(148, 277);
             btnClear.Margin = new Padding(2);
             btnClear.Name = "btnClear";
@@ -187,9 +187,9 @@
             // 
             // btnBack
             // 
-            btnBack.BackColor = Color.FromArgb(128, 128, 255);
+            btnBack.BackColor = Color.FromArgb(192, 192, 255);
             btnBack.FlatStyle = FlatStyle.Flat;
-            btnBack.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnBack.Font = new Font("Arial Narrow", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnBack.Location = new Point(269, 277);
             btnBack.Margin = new Padding(2);
             btnBack.Name = "btnBack";

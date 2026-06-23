@@ -1,6 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
 using BillingSystem.Database;
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BillingSystem.Utils;
 
 namespace Billing_System
 {
@@ -263,8 +263,12 @@ namespace Billing_System
 
                         if (rowsAffected > 0)
                         {
+                            AuditLogger.Log("EDIT_CUSTOMER",
+                            $"Customer ID {_editCustomerId} updated by {AppSession.CurrentUsername}.");
+
+
                             MessageBox.Show("Customer saved successfully.",
-                                "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             ClearFields();
                         }
